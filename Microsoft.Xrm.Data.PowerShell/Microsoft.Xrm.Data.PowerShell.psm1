@@ -4527,11 +4527,11 @@ function Test-CrmViewPerformance{
 	    Add-Member -InputObject $psobj -MemberType NoteProperty -Name "LayoutXml" -Value $view.layoutxml
 	    Add-Member -InputObject $psobj -MemberType NoteProperty -Name "TotalRecords" -Value $totalCount
 	    Add-Member -InputObject $psobj -MemberType NoteProperty -Name "Owner" -Value $owner
-        Add-Member -InputObject $psobj -MemberType NoteProperty -Name "Performance" -Value $perf
+	    Add-Member -InputObject $psobj -MemberType NoteProperty -Name "Performance" -Value $perf
 		
 		#before returning always set connection caller id back to ourself: 
         if($RunAs -or $RunAsViewOwner){
-			Write-verobse "Setting connection caller id back to current user"
+			Write-Verbose "Setting connection caller id back to current user"
 			Set-CrmConnectionCallerId -conn $conn -CallerId $RunAs                
 		}
 
